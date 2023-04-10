@@ -36,6 +36,9 @@ getInstruction(
                     document.querySelector(
                       "#mashedPotatoes"
                     ).innerHTML += `<li>Mashed potatoes are ready!</li>`;
+                    document
+                      .querySelector("#mashedPotatoesImg")
+                      .removeAttribute("hidden");
                   },
                   (err) => err
                 );
@@ -98,6 +101,7 @@ obtainInstruction("steak", 0)
 
   .then(() => {
     document.querySelector("#steak").innerHTML += `<li>Steak is ready!</li>`;
+    document.querySelector("#steakImg").removeAttribute("hidden");
   });
 
 // Iteration 3 using async/await
@@ -127,6 +131,28 @@ async function makeBroccoli() {
   document.querySelector(
     "#broccoli"
   ).innerHTML += `<li>Broccoli is ready!</li>`;
+  document.querySelector("#broccoliImg").removeAttribute("hidden");
 }
 
 makeBroccoli();
+//"brusselsSprouts"
+Promise.all([
+  obtainInstruction("brusselsSprouts", 0),
+  obtainInstruction("brusselsSprouts", 1),
+  obtainInstruction("brusselsSprouts", 2),
+  obtainInstruction("brusselsSprouts", 3),
+  obtainInstruction("brusselsSprouts", 4),
+  obtainInstruction("brusselsSprouts", 5),
+  obtainInstruction("brusselsSprouts", 6),
+  obtainInstruction("brusselsSprouts", 7),
+]).then((step) => {
+  for (let i = 0; i < step.length; i++) {
+    document.querySelector(
+      "#brusselsSprouts"
+    ).innerHTML += `<li>${step[i]}</li>`;
+  }
+  document.querySelector(
+    "#brusselsSprouts"
+  ).innerHTML += `<li>Brussels sprouts are ready!</li>`;
+  document.querySelector("#brusselsSproutsImg").removeAttribute("hidden");
+});
