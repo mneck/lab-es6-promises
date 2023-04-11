@@ -97,12 +97,11 @@ obtainInstruction("steak", 0)
     document.querySelector("#steak").innerHTML += `<li>${step7}</li>`;
   })
 
-  .catch((err) => console.log(err))
-
   .then(() => {
     document.querySelector("#steak").innerHTML += `<li>Steak is ready!</li>`;
     document.querySelector("#steakImg").removeAttribute("hidden");
-  });
+  })
+  .catch((err) => console.log(err));
 
 // Iteration 3 using async/await
 
