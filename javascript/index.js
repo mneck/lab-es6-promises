@@ -40,19 +40,19 @@ getInstruction(
                       .querySelector("#mashedPotatoesImg")
                       .removeAttribute("hidden");
                   },
-                  (err) => err
+                  (error) => error
                 );
               },
-              (err) => err
+              (error) => error
             );
           },
-          (err) => err
+          (error) => error
         );
       },
-      (err) => err
+      (error) => error
     );
   },
-  (err) => err
+  (error) => error
 );
 
 // Iteration 2
